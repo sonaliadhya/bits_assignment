@@ -1,1 +1,7 @@
+#1. User Identity Verification
+whoami
 
+#2. Workspace Validation
+#Display the current working directory and list all files and directories in that location using long format listing.
+pwd
+ls -l
