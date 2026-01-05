@@ -1,0 +1,33 @@
+#1. System Uptime Verification
+#Display the time elapsed since the system was last booted.
+uptime -p
+#2. User Process Listing
+#List all processes currently running under your user account.
+ps -u $USER 
+#3. CPU Usage Analysis
+#Identify the process that is consuming the highest CPU usage among your running processes.
+ps -u $USER --sort=-%cpu | head -n 2 
+#4. Background Process Execution
+#Start a command in the background and verify that it is running.
+sleep 100 & jobs 
+#5. Process Priority Management
+#Change the priority (niceness) of one of your running processes and display the updated priority.
+renice +5 -p \((pgrep-u\)USER sleep | head -n 1) && ps -o pid,ni,comm -p \((pgrep-u\)USER sleep | head -n 1) 
+#6. Memory Usage Monitoring
+#Display memory usage information in a human-readable format.
+free -h 
+#7. Disk Space Inspection
+#Display the disk space usage of the filesystem where your home directory resides.
+df -h 
+#8. Shell Identification
+#Display the name of the shell currently in use.
+echo $SHELL 
+#9. Output Redirection
+#Redirect the output of a system information command of your choice into a file named system_report.txt.
+uname -a > system_report.txt 
+#10. Disk Usage Visualization
+#Demonstrate the usage of the ncdu tool using appropriate options and briefly explain what it shows.
+ncdu -q ~
+#Explanation: The ncdu command launches an interactive ncurses-based disk usage analyzer. 
+#The -q option enables quiet mode. 
+#It provides a visual, navigable list of directories and files sorted by size, allowing users to quickly identify what is consuming the most disk space in their home directory.  
