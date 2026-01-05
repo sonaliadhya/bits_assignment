@@ -5,3 +5,34 @@ whoami
 #Display the current working directory and list all files and directories in that location using long format listing.
 pwd
 ls -l
+
+#3. Environment Confirmation File
+#Create a file named user_info.txt and write the line:
+#&quot;Linux user environment verified&quot;
+touch user_info.txt
+echo "Linux user environment verified">user_info.txt
+
+#4. File Integrity Check
+#Display the number of characters present in user_info.txt.
+wc -c user_info.txt
+
+#5. Learning the Tools
+#Access the manual page of the mkdir command. Identify one useful option and briefly explain what it does.
+man mkdir
+
+#6. Home Directory Inspection
+#List the contents of your home directory sorted alphabetically.
+ls -l
+
+#7. Log Investigation
+#Search for the word &quot;admin&quot; inside a file named log.txt and display only the matching lines.
+grep "admin" log.txt
+#8. System Information Check
+#Display the Linux kernel version currently running.
+uname -r
+#9. Network Connectivity Test
+#Verify network connectivity by sending ICMP packets to www.google.com.
+ping -c 4 www.google.com
+#10. System Health Awareness
+#Display the command used to check system uptime and briefly explain its output (uptime duration, number of users, load average).
+uptime
