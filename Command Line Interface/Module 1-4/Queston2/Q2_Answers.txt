@@ -1,0 +1,41 @@
+#1. Project Workspace Setup
+#Create a directory named documents inside your home directory. This directory will store your project-related files.
+mkdir ~/documents
+#2. File Creation
+#Navigate into the documents directory and create a file named plan.txt.
+cd ~/documents
+touch plan.txt
+
+#3. Content Addition
+#Write some sample text of your choice into the plan.txt file. The content can be a short project note or reminder.
+echo "This is a test file." > plan.txt
+
+#4. File Metadata Verification
+#Display the permissions and ownership details of the plan.txt file. Ensure your username appears in the output.
+ls -l plan.txt
+
+#5. File Duplication
+#Create a copy of plan.txt and name it plan_copy.txt.
+cp plan.txt plan_copy.txt
+
+#6. Directory Renaming
+#Rename the documents directory to project_documents to reflect the project scope more clearly.
+cd ~
+mv documents project_documents
+
+#7. Archival Structure
+#Inside the project_documents directory, create a subdirectory named archive.
+cd ~
+mv documents project_documents
+
+#8. File Organization
+#Move plan_copy.txt into the archive subdirectory.
+mv plan_copy.txt archive/
+
+#9. Recursive Listing
+#List all files and subdirectories inside project_documents recursively so that the complete directory structure is visible.
+ls -R ~/project_documents
+
+#10. Path Verification
+#Display the absolute path of the plan_copy.txt file after it has been moved to the archive directory.
+realpath archive/plan_copy.txt
