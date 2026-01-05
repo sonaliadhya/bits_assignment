@@ -1,0 +1,33 @@
+#1. File Creation
+#Create a file named sample_data.txt in your home directory and add some sample text to it.
+echo "This is sample data for link verification." > ~/sample_data.txt
+#2. Hard Link Creation
+#Create a hard link to sample_data.txt named sample_hard.txt.
+ln ~/sample_data.txt ~/sample_hard.txt
+#3. Symbolic Link Creation
+#Create a symbolic (soft) link to sample_data.txt named sample_soft.txt.
+ln -s ~/sample_data.txt ~/sample_soft.txt
+#4. Inode Verification
+#Display the inode numbers of sample_data.txt, sample_hard.txt, and sample_soft.txt.
+ls -i sample_data.txt sample_hard.txt sample_soft.txt
+#5. Inode Analysis
+#Identify which files share the same inode number and briefly explain the reason.
+#Answer: sample_data.txt and sample_hard.txt share the same inode. This is because a hard link is an additional pointer to the same physical data on the disk. The symbolic link has a different inode because it is a separate file containing a path reference.
+#6. File Metadata Inspection
+#Display detailed file information (permissions, ownership, size, timestamps) of sample_data.txt.
+stat sample_data.txt
+#7. Disk Usage Check
+#Display the disk usage of your home directory in a human-readable format.
+du -sh ~
+#8. File Size Overview
+#Display the size of each file present in your home directory in a human-readable format.
+ls -lh ~
+#9. Link Deletion Test
+#Delete the symbolic link sample_soft.txt and verify that the original file sample_data.txt is unaffected.
+rm sample_soft.txt && ls -l sample_data.txt
+#10. Disk Utility Demonstration
+#Demonstrate the usage of du and df commands using various useful options and briefly explain the output.
+df -hT
+#Explanation: Displays available disk space on all mounted filesystems in human-readable format (-h) including the filesystem type (-T).
+du -hc --max-depth=1 ~/
+#Explanation: Summarizes disk usage for directories in the home folder, providing a grand total (-c) in human-readable format (-h) while limiting depth to one level.
